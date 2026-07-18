@@ -375,7 +375,7 @@ function App() {
 
       <footer className="footer">
         <span>{content.name}</span>
-        <span>Static-first today. Dynamic-ready tomorrow.</span>
+        <span>© {new Date().getFullYear()}</span>
       </footer>
     </div>
   );
