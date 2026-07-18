@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "./venv/bin/node ./node_modules/vite/bin/vite.js",
-    "build": "./venv/bin/node ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json && ./venv/bin/node ./node_modules/vite/bin/vite.js build",
-    "preview": "./venv/bin/node ./node_modules/vite/bin/vite.js preview"
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json && node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
   },
   "dependencies": {
     "react": "^18.3.1",
