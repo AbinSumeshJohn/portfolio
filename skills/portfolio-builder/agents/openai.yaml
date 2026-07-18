@@ -1,0 +1,6 @@
+interface:
+  display_name: "Portfolio Builder"
+  short_description: "Update the portfolio site from resume and GitHub content"
+  default_prompt: "Use $portfolio-builder to update the portfolio site from resume or GitHub content while keeping the data layer separate from presentation."
+policy:
+  allow_implicit_invocation: true

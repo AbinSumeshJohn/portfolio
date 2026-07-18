@@ -1,0 +1,23 @@
+{
+  "name": "abin-sumesh-john-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "./venv/bin/node ./node_modules/vite/bin/vite.js",
+    "build": "./venv/bin/node ./node_modules/typescript/bin/tsc --noEmit -p tsconfig.json && ./venv/bin/node ./node_modules/vite/bin/vite.js build",
+    "preview": "./venv/bin/node ./node_modules/vite/bin/vite.js preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8"
+  }
+}
