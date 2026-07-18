@@ -96,7 +96,6 @@ function App() {
       <main id="top" className="page">
         <section className="hero panel panel--hero" data-reveal>
           <div className="hero-copy">
-            <p className="eyebrow">DevOps-first application lifecycle profile</p>
             <h1>{content.name}</h1>
             <p className="headline">{content.headline}</p>
             <p className="summary">{content.summary}</p>
