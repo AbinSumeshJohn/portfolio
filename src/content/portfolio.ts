@@ -1,3 +1,8 @@
+export interface VisualRef {
+  key: string;
+  alt: string;
+}
+
 export interface StatItem {
   value: string;
   label: string;
@@ -18,6 +23,7 @@ export interface ProjectItem {
   summary: string;
   bullets: string[];
   tags: string[];
+  image: VisualRef;
 }
 
 export interface EducationItem {
@@ -33,6 +39,16 @@ export interface HighlightItem {
   detail: string;
 }
 
+export interface SkillItem {
+  name: string;
+  iconKey: string;
+}
+
+export interface SkillGroup {
+  category: string;
+  items: SkillItem[];
+}
+
 export interface PortfolioContent {
   name: string;
   headline: string;
@@ -42,10 +58,12 @@ export interface PortfolioContent {
   linkedin: string;
   github: string;
   resumeUrl: string;
+  resumeDownloadName: string;
   summary: string;
+  heroImage: VisualRef;
   stats: StatItem[];
   focusAreas: string[];
-  skills: { category: string; items: string[] }[];
+  skills: SkillGroup[];
   experience: ExperienceItem[];
   projects: ProjectItem[];
   education: EducationItem[];
@@ -63,8 +81,13 @@ export const portfolioContent: PortfolioContent = {
   linkedin: 'https://www.linkedin.com/in/abin-sumesh-john',
   github: 'https://github.com/AbinSumeshJohn',
   resumeUrl: 'mailto:abinsjohn1998@gmail.com?subject=Resume%20Request',
+  resumeDownloadName: 'Abin-Sumesh-John-Resume.txt',
   summary:
     'IT Developer with experience supporting banking and telecom applications across the product lifecycle, from development and source-code management to testing, deployment, batch operations, release validation, and production support.',
+  heroImage: {
+    key: 'hero-portrait',
+    alt: 'Stylized portrait illustration for Abin Sumesh John',
+  },
   stats: [
     { value: '4+', label: 'years across application support and delivery workflows' },
     { value: '50%', label: 'faster pre-processing after shell automation improvements' },
@@ -80,27 +103,63 @@ export const portfolioContent: PortfolioContent = {
   skills: [
     {
       category: 'DevOps & Delivery',
-      items: ['Bitbucket', 'Jenkins', 'Ansible', 'SonarQube', 'AutoSys'],
+      items: [
+        { name: 'Bitbucket', iconKey: 'bitbucket' },
+        { name: 'Jenkins', iconKey: 'jenkins' },
+        { name: 'Ansible', iconKey: 'ansible' },
+        { name: 'SonarQube', iconKey: 'sonarqube' },
+        { name: 'AutoSys', iconKey: 'autosys' },
+      ],
     },
     {
       category: 'Development',
-      items: ['PL/SQL', 'Oracle SQL', 'SQL', 'Python', 'C++'],
+      items: [
+        { name: 'PL/SQL', iconKey: 'plsql' },
+        { name: 'Oracle SQL', iconKey: 'oracle' },
+        { name: 'SQL', iconKey: 'sql' },
+        { name: 'Python', iconKey: 'python' },
+        { name: 'C++', iconKey: 'cpp' },
+      ],
     },
     {
       category: 'Data & Analytics',
-      items: ['Oracle', 'Data validation', 'Reporting support', 'Incident analysis', 'Power BI'],
+      items: [
+        { name: 'Oracle', iconKey: 'oracle' },
+        { name: 'Data validation', iconKey: 'validation' },
+        { name: 'Reporting support', iconKey: 'reporting' },
+        { name: 'Incident analysis', iconKey: 'incident' },
+        { name: 'Power BI', iconKey: 'powerbi' },
+      ],
     },
     {
       category: 'Automation & Scripting',
-      items: ['Shell Scripting', 'YAML', 'JSON', 'Batch jobs', 'Deployment support'],
+      items: [
+        { name: 'Shell Scripting', iconKey: 'shell' },
+        { name: 'YAML', iconKey: 'yaml' },
+        { name: 'JSON', iconKey: 'json' },
+        { name: 'Batch jobs', iconKey: 'batch' },
+        { name: 'Deployment support', iconKey: 'deploy' },
+      ],
     },
     {
       category: 'Testing & Debugging',
-      items: ['SIT', 'UAT', 'Defect triaging', 'RCA', 'Release validation'],
+      items: [
+        { name: 'SIT', iconKey: 'sit' },
+        { name: 'UAT', iconKey: 'uat' },
+        { name: 'Defect triaging', iconKey: 'bug' },
+        { name: 'RCA', iconKey: 'rca' },
+        { name: 'Release validation', iconKey: 'release' },
+      ],
     },
     {
       category: 'Tools & Collaboration',
-      items: ['Git', 'Confluence', 'Jira', 'Linux command line', 'Secure file transfer'],
+      items: [
+        { name: 'Git', iconKey: 'git' },
+        { name: 'Confluence', iconKey: 'confluence' },
+        { name: 'Jira', iconKey: 'jira' },
+        { name: 'Linux command line', iconKey: 'linux' },
+        { name: 'Secure file transfer', iconKey: 'sftp' },
+      ],
     },
   ],
   experience: [
@@ -181,6 +240,10 @@ export const portfolioContent: PortfolioContent = {
         'Worked with Google Timeline-related data to support travel-history features.',
       ],
       tags: ['Flask', 'Gemini API', 'Google Maps', 'Weather API', 'OAuth 2.0'],
+      image: {
+        key: 'pathfinder',
+        alt: 'Illustrated preview of the Pathfinder travel itinerary planner',
+      },
     },
     {
       name: 'Predictive Alarm Chattering Detection',
@@ -192,6 +255,10 @@ export const portfolioContent: PortfolioContent = {
         'Used SMOTE, Recursive Feature Elimination, and Markov Chains to improve resilience and forecasting.',
       ],
       tags: ['Random Forest', 'SMOTE', 'RFE', 'Markov Chains'],
+      image: {
+        key: 'alarm-chattering',
+        alt: 'Illustrated preview of alarm analysis and predictive modeling work',
+      },
     },
     {
       name: 'Lean Automation',
@@ -203,6 +270,10 @@ export const portfolioContent: PortfolioContent = {
         'Modelled motion waste and layout changes in AnyLogic to support cost savings.',
       ],
       tags: ['Arduino', 'AnyLogic', 'Lean', 'Industrial Simulation'],
+      image: {
+        key: 'lean-automation',
+        alt: 'Illustrated preview of lean automation and industrial workflow design',
+      },
     },
   ],
   education: [
